@@ -1,0 +1,24 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_PASSWORD}
+            redirect-uri: ${REDIRECT_URL}
+            authorization-grant-type: authorization_code
+            scope: # 기본 값 openid,profile,email => profile, email 로 설정 변경
+              - profile
+              - email
+
+  profiles:
+    active: dev
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+    com:
+      lee:
+        drugescape : DEBUG
