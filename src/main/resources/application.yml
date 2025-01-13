@@ -11,6 +11,13 @@ spring:
             scope: # 기본 값 openid,profile,email => profile, email 로 설정 변경
               - profile
               - email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=consent
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+
 
   profiles:
     active: dev
