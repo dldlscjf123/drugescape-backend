@@ -3,6 +3,7 @@ package com.lee.drugescape.drugescape.entity;
 import com.lee.drugescape.drugescape.type.UserType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "member")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class User {
 
     @Id
@@ -26,9 +28,6 @@ public class User {
 
     @Column(nullable = false)
     private String userEmail;
-
-    @Column
-    private String picture;
 
     @Column(columnDefinition = "ENUM('GOOGLE') DEFAULT 'GOOGLE'")
     @Enumerated(EnumType.STRING)
