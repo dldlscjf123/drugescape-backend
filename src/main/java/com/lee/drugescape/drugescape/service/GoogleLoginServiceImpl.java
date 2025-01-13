@@ -55,14 +55,6 @@ public class GoogleLoginServiceImpl implements SocialLoginService {
                 .redirect_uri(googleRedirectUri)
                 .grant_type(googleGrantType)
                 .build();
-        // 로그 추가 - GoogleRequestAccessTokenDto 값 확인
-        log.info("Request Access Token DTO: code={}, client_id={}, client_secret={}, redirect_uri={}, grant_type={}",
-                requestAccessTokenDto.getCode(),
-                requestAccessTokenDto.getClient_id(),
-                requestAccessTokenDto.getClient_secret(),
-                requestAccessTokenDto.getRedirect_uri(),
-                requestAccessTokenDto.getGrant_type());
-
         ResponseEntity<?> response = googleAuthApi.getAccessToken(requestAccessTokenDto);
         log.info("API Response Body: {}", response.getBody());
 
@@ -91,6 +83,7 @@ public class GoogleLoginServiceImpl implements SocialLoginService {
 
         return SocialUserResponse.builder()
                 .id(googleLoginResponse.getId())
+                .name(googleLoginResponse.getName())
                 .email(googleLoginResponse.getEmail())
                 .build();
     }
