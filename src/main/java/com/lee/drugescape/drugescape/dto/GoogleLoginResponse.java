@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GoogleLoginResponse {
-
     private String id;
+    private String name;
     private String email;
     private String picture;
 }
