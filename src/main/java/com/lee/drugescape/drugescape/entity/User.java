@@ -29,6 +29,9 @@ public class User {
     @Column(nullable = false)
     private String userEmail;
 
+    @Column
+    private String picture;
+
     @Column(columnDefinition = "ENUM('GOOGLE') DEFAULT 'GOOGLE'")
     @Enumerated(EnumType.STRING)
     private UserType userType;
