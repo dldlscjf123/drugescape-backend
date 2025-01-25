@@ -85,6 +85,7 @@ public class GoogleLoginServiceImpl implements SocialLoginService {
                 .id(googleLoginResponse.getId())
                 .name(googleLoginResponse.getName())
                 .email(googleLoginResponse.getEmail())
+                .picture(googleLoginResponse.getPicture())
                 .build();
     }
     private String decodeCode(String encodedCode) {
