@@ -16,4 +16,5 @@ public class UserJoinRequest {
     private String userName;
     private UserType userType;
     private String userEmail;
+    private String picture;
 }
