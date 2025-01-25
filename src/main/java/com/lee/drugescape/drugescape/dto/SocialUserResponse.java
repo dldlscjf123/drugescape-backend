@@ -17,4 +17,5 @@ public class SocialUserResponse {
     private String name;
     private String gender;
     private String birthday;
+    private String picture;
 }
